@@ -12,6 +12,7 @@ export const deleteLead = (id) => API.delete(`/leads/${id}`)
 //Agents
 export const getAgents = () => API.get('/agents');
 export const createAgents = (data) => API.post('/agents', data);
+export const deleteAgent = (id) => API.delete(`/agents/${id}`)
 
 //Tags
 export const getTags = () => API.get('/tags');

@@ -5,6 +5,8 @@ import { useLeads } from "../contexts/LeadsContext";
 function Settings() {
   const { leads, deleteLeadById, loading: leadsLoading, error: leadsError } = useLeads();
   const { agents, deleteAgentById, loading: agentsLoading, error: agentsError } = useAgents();
+  console.log(agents)
+  console.log(leads)
 
   return (
     <div className="card p-4">
@@ -37,7 +39,7 @@ function Settings() {
                   <span>{agent.name}</span>
                   <button
                     className="btn btn-sm btn-danger"
-                    onClick={() => deleteAgentById(agent._id)}
+                    onClick={() => deleteAgentById(agent.id)}
                   >
                     Delete
                   </button>

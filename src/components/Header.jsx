@@ -3,12 +3,10 @@ import { useLocation } from "react-router-dom";
 
 const Header = () => {
   const location = useLocation();
-  const [pageTitle, setPageTitle] = useState("Anvaya CRM");
+  const [pageTitle, setPageTitle] = useState("Kranti CRM");
 
-  // A mapping of URL paths to human-readable titles.
-  // Add more paths here as you build out your application.
   const titleMap = {
-    "/": "Anvaya CRM Dashboard",
+    "/": "Kranti CRM Dashboard",
     "/leads": "Lead List",
     "/leads/new": "Add New Lead",
     "/agents": "Sales Agent Management",

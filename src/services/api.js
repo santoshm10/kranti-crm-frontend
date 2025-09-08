@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = axios.create({ baseURL: "http://localhost:3001/api/v1/"})
+const API = axios.create({ baseURL: "https://kranti-crm-backend.vercel.app/api/v1/"})
 
 // Leads
 export const createLead = (data) => API.post('/leads', data);

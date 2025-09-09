@@ -7,13 +7,18 @@ function SalesByAgent() {
   const { agents } = useAgents();
   const { leads } = useLeads();
   const { id: agentId } = useParams();
+  console.log("id: agentId: ", agentId)
 
   const [statusFilter, setStatusFilter] = useState("All");
   const [priorityFilter, setPriorityFilter] = useState("All");
   const [sortOption, setSortOption] = useState("none");
 
   const selectedAgent = agents.find((agent) => agent.id === agentId);
-  let agentLeads = leads.filter((lead) => lead.salesAgent._id === agentId);
+  console.log("selectedAgent: ", selectedAgent)
+ 
+  let agentLeads = leads.filter((lead) => lead.salesAgent?._id === agentId );
+  console.log("agentLeads: ", agentLeads)
+
 
   if (statusFilter !== "All") {
     agentLeads = agentLeads.filter((agent) => agent.status === statusFilter);
@@ -76,7 +81,7 @@ function SalesByAgent() {
           </select>
         </div>
         <div className="row g-4">
-          {agentLeads &&
+          {agentLeads && agentLeads.length > 0 ? (
             agentLeads.map((lead) => (
               <div key={lead._id} className="col-12 col-sm-6 col-lg-4">
                 <div className="card p-3 shadow-sm rounded-3">
@@ -97,7 +102,11 @@ function SalesByAgent() {
                   </p>
                 </div>
               </div>
-            ))}
+            ))
+          ) : (
+            <p className="text-center text-muted">No leads</p>
+          )
+            }
         </div>
       </div>
     </div>

@@ -1,8 +1,12 @@
 import { useAgents } from "../contexts/AgentsContext";
 import { Link } from "react-router-dom";
+import { useLeads } from "../contexts/LeadsContext";
 
 function Agents() {
   const { agents, loading, error } = useAgents();
+  const {leads} = useLeads()
+  console.log("agents:", agents)
+  console.log("leads:", leads)
   
   if(loading) {
     <p>Loading agents...</p>

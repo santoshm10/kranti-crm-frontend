@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
 // Import all your context providers
 import { LeadsProvider } from "./contexts/LeadsContext";
 import { AgentsProvider } from "./contexts/AgentsContext";
@@ -34,16 +33,17 @@ function App() {
             <CommentsProvider>
               <ReportProvider>
                 <Header />
-                <div style={{ display: "flex", gap: "1rem", margin: "0 1rem" }}>
+                <div className="d-flex flex-column flex-md-row gap-3 mx-3">
                   <div
+                  
                     style={{
-                      width: "250px", // fixed width
-                      flexShrink: 0, // don't let it shrink
+                      width: "250px",
+                      flexShrink: 0,
                     }}
                   >
                     <Sidebar />
                   </div>
-                  <div style={{ flex: 1 }}>
+                  <div className="flex-fill">
                     <Routes>
                       <Route path="/" element={<Dashboard />} />
                       <Route path="/leads" element={<Leads />} />
@@ -54,7 +54,7 @@ function App() {
                       <Route path="/agents/new" element={<AgentForm />} />
                       <Route path="/agents/:id" element={<SalesByAgent />} />
                       <Route path="/reports" element={<Reports />} />
-                      <Route path="/setting" element={<Settings />}/>
+                      <Route path="/setting" element={<Settings />} />
                     </Routes>
                     <ToastContainer position="top-right" autoClose={3000} />
                   </div>

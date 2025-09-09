@@ -3,6 +3,7 @@ import { useAgents } from "../contexts/AgentsContext";
 import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import { toast } from "react-toastify";
 
 function AgentForm() {
   const { createNewAgent } = useAgents();
@@ -24,12 +25,13 @@ function AgentForm() {
 
     try {
       await createNewAgent(formData);
-      alert("Agent Created Successfully");
+      toast.success("Agent Created Successfully");
       setFormData({
         name: "",
         email: "",
       });
     } catch (error) {
+      toast.error("Failed to create agent. Please check the form data.")
       setError("Failed to create agent. Please check the form data.");
     }
   };

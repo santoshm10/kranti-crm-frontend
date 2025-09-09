@@ -1,5 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 // Import all your context providers
 import { LeadsProvider } from "./contexts/LeadsContext";
@@ -53,6 +56,7 @@ function App() {
                       <Route path="/reports" element={<Reports />} />
                       <Route path="/setting" element={<Settings />}/>
                     </Routes>
+                    <ToastContainer position="top-right" autoClose={3000} />
                   </div>
                 </div>
               </ReportProvider>

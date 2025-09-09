@@ -8,6 +8,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Badge from 'react-bootstrap/Badge';
+import { toast } from "react-toastify";
 
 function LeadForm() {
   const { createNewLead } = useLeads();
@@ -77,7 +78,7 @@ function LeadForm() {
     
     try {
       await createNewLead(formData);
-      alert("Lead Created Successfully");
+      toast.success("Lead Created Successfully");
       setFormData({
         name: '',
         source: '',
@@ -88,6 +89,7 @@ function LeadForm() {
         priority: 'Medium',
       });
     } catch (err) {
+      toast.error('Failed to create lead. Please check the form data.')
       setError('Failed to create lead. Please check the form data.');
       console.error(err);
     } finally {

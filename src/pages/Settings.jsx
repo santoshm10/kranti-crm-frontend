@@ -1,16 +1,42 @@
 import { Link } from "react-router-dom";
 import { useAgents } from "../contexts/AgentsContext";
 import { useLeads } from "../contexts/LeadsContext";
+import { toast } from "react-toastify";
 
 function Settings() {
-  const { leads, deleteLeadById, loading: leadsLoading, error: leadsError } = useLeads();
-  const { agents, deleteAgentById, loading: agentsLoading, error: agentsError } = useAgents();
-  console.log(agents)
-  console.log(leads)
+  const {
+    leads,
+    deleteLeadById,
+    loading: leadsLoading,
+    error: leadsError,
+  } = useLeads();
+  const {
+    agents,
+    deleteAgentById,
+    loading: agentsLoading,
+    error: agentsError,
+  } = useAgents();
+
+  const handleDeleteAgent = async (agent) => {
+    try {
+      await deleteAgentById(agent.id);
+      toast.success("Agent delete Successfully");
+    } catch (error) {
+      toast.error("Error while deleting agent");
+    }
+  };
+
+  const handleDeleteLead = async (lead) => {
+    try {
+      await deleteLeadById(lead._id);
+      toast.success("Lead delete Successfully");
+    } catch (error) {
+      toast.error("Error while deleting lead");
+    }
+  };
 
   return (
     <div className="card p-4">
-     
       <div className="d-flex align-items-center justify-content-center gap-3 mb-4 flex-wrap">
         <Link to="/agents/new" className="btn btn-primary">
           Add New Agent
@@ -20,9 +46,7 @@ function Settings() {
         </Link>
       </div>
 
-    
       <div className="row">
- 
         <div className="col-md-6 mb-4">
           <h5>Agents</h5>
           {agentsLoading ? (
@@ -39,7 +63,7 @@ function Settings() {
                   <span>{agent.name}</span>
                   <button
                     className="btn btn-sm btn-danger"
-                    onClick={() => deleteAgentById(agent.id)}
+                    onClick={() => handleDeleteAgent(agent)}
                   >
                     Delete
                   </button>
@@ -51,7 +75,6 @@ function Settings() {
           )}
         </div>
 
-   
         <div className="col-md-6 mb-4">
           <h5>Leads</h5>
           {leadsLoading ? (
@@ -68,7 +91,7 @@ function Settings() {
                   <span>{lead.name}</span>
                   <button
                     className="btn btn-sm btn-danger"
-                    onClick={() => deleteLeadById(lead._id)}
+                    onClick={() => handleDeleteLead(lead)}
                   >
                     Delete
                   </button>

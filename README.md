@@ -80,7 +80,7 @@ Watch a walkthrough (5 minutes) of all major features of this app: [Video Link](
 ## API Refrence
 
 ### **GET /api/v1/leads**
-List all leads
+List all leads<br>
 Sample responce:
 ```
 [
@@ -90,7 +90,7 @@ Sample responce:
 ]
 ```
 ### **POST /api/v1/leads**
-Create new lead 
+Create new lead<br>
 Sample responce:
 ```
 {
@@ -104,7 +104,7 @@ Update lead
 Delete lead
 
 ### **GET /api/v1/agents**
-Get all agents
+Get all agents<br>
 Sample responce:
 ```
 [
@@ -115,7 +115,7 @@ Sample responce:
 ```
 
 ### **POST /api/v1/agents**
-Create new agent
+Create new agent<br>
 Sample responce:
 ```
 {
@@ -127,7 +127,7 @@ Sample responce:
 Delete lagent
 
 ### **GET /api/v1/leads/:id/comments**
-Get commets of a lead
+Get commets of a lead<br>
 Sample responce:
 ```
 [
@@ -138,7 +138,7 @@ Sample responce:
 ```
 
 ### **POST /api/v1/leads/:id/comments**
-Get all agents
+Get all agents<br>
 Sample responce:
 ```
   {
@@ -147,7 +147,7 @@ Sample responce:
 ```
 
 ### **GET /api/v1/leads/tags**
-Get all tags
+Get all tags<br>
 Sample responce:
 ```
 [
@@ -158,7 +158,7 @@ Sample responce:
 ```
 
 ### **POST /api/v1/tags**
-Create tags
+Create tags<br>
 Sample responce:
 ```
   {
@@ -167,7 +167,7 @@ Sample responce:
 ```
 
 ### **GET /api/v1/tags/leads/:tag-name**
-Get Leads by tag
+Get Leads by tag<br>
 Sample responce:
 ```
   {
@@ -176,7 +176,7 @@ Sample responce:
 ```
 
 ### **GET /api/v1/report/pipeline**
-Get pipeline leads
+Get pipeline leads<br>
 Sample responce:
 ```
   {
@@ -185,7 +185,7 @@ Sample responce:
 ```
 
 ### **GET /api/v1/report/closed**
-Get closed leads
+Get closed leads<br>
 Sample responce:
 ```
   {
@@ -193,7 +193,7 @@ Sample responce:
   },
 ```
 ### **GET /api/v1/report/closed-by-agent**
-Get closed leads by agents
+Get closed leads by agents<br>
 Sample responce:
 ```
   {

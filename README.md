@@ -6,7 +6,7 @@ Kranti CRM is a Customer Relationship Management system designed to streamline s
 
 ## Demo Link
 
-(Live Demo)[https://kranti-crm-frontend.vercel.app/]
+(Live Demo) [https://kranti-crm-frontend.vercel.app/]
 
 ---
 
@@ -45,7 +45,7 @@ npm run dev   # starts server at localhost:3001
 
 ## Demo video
 
-Watch a walkthrough (5 minutes) of all major features of this app: (Video Link)[https://drive.google.com/file/d/1aq8NZlR7Q0VkGN6cNL6BaobhSYOpYXeq/view?usp=sharing]
+Watch a walkthrough (5 minutes) of all major features of this app: (Video Link) [https://drive.google.com/file/d/1aq8NZlR7Q0VkGN6cNL6BaobhSYOpYXeq/view?usp=sharing]
 
 ---
 

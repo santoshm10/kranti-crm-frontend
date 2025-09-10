@@ -14,8 +14,8 @@ Kranti CRM is a Customer Relationship Management system designed to streamline s
 
 ```
 Clone the repository
-git clone https://github.com/<your-username>/kranti-crm-frontend.git
-git clone https://github.com/<your-username>/kranti-crm-backend.git
+git clone https://github.com/santoshm10/kranti-crm-frontend.git
+git clone https://github.com/santoshm10/kranti-crm-backend.git
 
 Frontend setup
 cd kranti-crm-frontend
